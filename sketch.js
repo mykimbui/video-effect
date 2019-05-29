@@ -2,9 +2,11 @@ var video;
 var slider;
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+  canvas = createCanvas(500, 500, WEBGL);
   canvas.id('p5canvas');
-  video = createVideo("video.mp4");
+    video = createCapture(VIDEO);
+
+  // video = createVideo("video.mp4");
   video.loop();
   video.size(500, 500);
   video.id('p5video');
@@ -23,7 +25,8 @@ function setup() {
   // target.source = blur;
 
   var scanlines = seriously.effect('directionblur');
-  cnv.mouseOver(changeGray);
+
+  // cnv.mouseOver(changeGray);
 
   scanlines.amount = '#blur-slider';
   scanlines.source = src;
